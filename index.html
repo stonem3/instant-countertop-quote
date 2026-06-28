@@ -10,184 +10,161 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --charcoal: #1a1a1a;
+      --charcoal: #1e1e1e;
       --mid: #555;
       --muted: #999;
-      --border: #e0deda;
-      --bg: #f7f6f2;
-      --white: #ffffff;
-      --accent: #1a1a1a;
-      --radius: 12px;
+      --border: #e8e6e1;
+      --bg: #ffffff;
+      --radius: 10px;
     }
+
+    html, body { margin: 0; padding: 0; background: #fff; }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      min-height: 100vh;
+      background: #fff;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
-      padding: 2rem 1rem 4rem;
+      padding: 2rem 1rem 3rem;
       color: var(--charcoal);
     }
 
-    .brand-header {
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+    .brand-header { text-align: center; margin-bottom: 1.75rem; }
 
     .brand-name {
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.15em;
+      font-size: 10px;
+      font-weight: 400;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .page-title {
-      font-size: 26px;
-      font-weight: 300;
-      color: var(--charcoal);
-      letter-spacing: -0.02em;
-    }
-
-    .page-subtitle {
-      font-size: 14px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    .card {
-      background: var(--white);
-      border-radius: 18px;
-      border: 1px solid var(--border);
-      padding: 2rem;
-      width: 100%;
-      max-width: 520px;
-      box-shadow: 0 2px 20px rgba(0,0,0,0.04);
-    }
-
-    /* Progress bar */
-    .progress-wrap {
-      margin-bottom: 2rem;
-    }
-
-    .progress-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 12px;
       color: var(--muted);
       margin-bottom: 8px;
     }
 
-    .progress-bar {
-      height: 3px;
-      background: var(--border);
-      border-radius: 2px;
-      overflow: hidden;
+    .page-title {
+      font-size: 22px;
+      font-weight: 300;
+      color: var(--charcoal);
+      letter-spacing: -0.01em;
     }
+
+    .page-subtitle {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      margin-top: 5px;
+      letter-spacing: 0.02em;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      width: 100%;
+      max-width: 460px;
+      box-shadow: 0 1px 12px rgba(0,0,0,0.05);
+    }
+
+    .progress-wrap { margin-bottom: 1.75rem; }
+
+    .progress-label {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+    }
+
+    .progress-bar { height: 2px; background: var(--border); border-radius: 1px; overflow: hidden; }
 
     .progress-fill {
       height: 100%;
       background: var(--charcoal);
-      border-radius: 2px;
+      border-radius: 1px;
       transition: width 0.4s ease;
     }
 
-    /* Step */
     .step { display: none; }
     .step.active { display: block; }
 
     .step-question {
-      font-size: 18px;
-      font-weight: 500;
+      font-size: 17px;
+      font-weight: 400;
       color: var(--charcoal);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
       letter-spacing: -0.01em;
     }
 
     .step-hint {
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 300;
       color: var(--muted);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.25rem;
+      line-height: 1.5;
     }
 
-    /* Option cards */
     .options-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 1.5rem;
+      gap: 8px;
+      margin-bottom: 1.25rem;
     }
 
     .options-grid.three { grid-template-columns: 1fr 1fr 1fr; }
     .options-grid.one { grid-template-columns: 1fr; }
 
     .option-card {
-      border: 1.5px solid var(--border);
+      border: 1px solid var(--border);
       border-radius: var(--radius);
-      padding: 1rem;
+      padding: 0.875rem 1rem;
       cursor: pointer;
       transition: all 0.15s;
       text-align: center;
       user-select: none;
     }
 
-    .option-card:hover {
-      border-color: var(--charcoal);
-      background: #fafaf8;
-    }
+    .option-card:hover { border-color: var(--charcoal); }
 
     .option-card.selected {
       border-color: var(--charcoal);
       background: var(--charcoal);
-      color: var(--white);
+      color: #fff;
     }
 
-    .option-card.selected .option-sub {
-      color: #aaa;
-    }
+    .option-card.selected .option-sub { color: #aaa; }
 
-    .option-title {
-      font-size: 14px;
-      font-weight: 500;
-      margin-bottom: 2px;
-    }
+    .option-title { font-size: 13px; font-weight: 500; letter-spacing: 0.01em; }
+    .option-sub { font-size: 11px; color: var(--muted); margin-top: 2px; font-weight: 300; }
 
-    .option-sub {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* Slider */
-    .slider-wrap { margin-bottom: 1.5rem; }
+    .slider-wrap { margin-bottom: 1.25rem; }
 
     .slider-value {
       font-size: 32px;
       font-weight: 300;
       color: var(--charcoal);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       letter-spacing: -0.02em;
     }
 
-    .slider-value span { font-size: 16px; color: var(--muted); }
+    .slider-value span { font-size: 15px; color: var(--muted); }
 
     input[type="range"] {
       width: 100%;
-      height: 4px;
+      height: 2px;
       appearance: none;
       background: var(--border);
-      border-radius: 2px;
+      border-radius: 1px;
       outline: none;
       cursor: pointer;
     }
 
     input[type="range"]::-webkit-slider-thumb {
       appearance: none;
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       background: var(--charcoal);
       border-radius: 50%;
       cursor: pointer;
@@ -196,150 +173,58 @@
     .slider-labels {
       display: flex;
       justify-content: space-between;
-      font-size: 12px;
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    /* Estimate preview */
-    .estimate-preview {
-      background: #f7f6f2;
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1rem 1.25rem;
-      margin-bottom: 1.5rem;
-      display: none;
-    }
-
-    .estimate-preview.visible { display: block; }
-
-    .estimate-label {
       font-size: 11px;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
       color: var(--muted);
-      margin-bottom: 4px;
+      margin-top: 8px;
+      font-weight: 300;
     }
 
-    .estimate-range {
-      font-size: 22px;
-      font-weight: 500;
-      color: var(--charcoal);
-    }
-
-    /* Buttons */
     .btn-next {
       width: 100%;
-      padding: 13px;
+      padding: 12px;
       background: var(--charcoal);
-      color: var(--white);
+      color: #fff;
       border: none;
       border-radius: var(--radius);
-      font-size: 15px;
-      font-weight: 500;
-      cursor: pointer;
-      font-family: inherit;
-      transition: opacity 0.15s;
-    }
-
-    .btn-next:hover { opacity: 0.82; }
-    .btn-next:disabled { opacity: 0.35; cursor: not-allowed; }
-
-    .btn-back {
-      width: 100%;
-      padding: 12px;
-      background: transparent;
-      color: var(--mid);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      font-size: 14px;
-      font-family: inherit;
-      cursor: pointer;
-      margin-top: 0.75rem;
-      transition: background 0.15s;
-    }
-
-    .btn-back:hover { background: var(--bg); }
-
-    /* Quote result */
-    .quote-result {
-      background: var(--charcoal);
-      border-radius: var(--radius);
-      padding: 1.5rem;
-      color: var(--white);
-      margin-bottom: 1.5rem;
-      text-align: center;
-    }
-
-    .quote-result-label {
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #888;
-      margin-bottom: 8px;
-    }
-
-    .quote-result-range {
-      font-size: 32px;
-      font-weight: 300;
-      letter-spacing: -0.02em;
-      margin-bottom: 4px;
-    }
-
-    .quote-result-note {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .quote-breakdown {
-      margin-bottom: 1.5rem;
-    }
-
-    .breakdown-title {
       font-size: 12px;
       font-weight: 500;
       letter-spacing: 0.08em;
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: opacity 0.15s;
       text-transform: uppercase;
+    }
+
+    .btn-next:hover { opacity: 0.82; }
+    .btn-next:disabled { opacity: 0.3; cursor: not-allowed; }
+
+    .btn-back {
+      width: 100%;
+      padding: 11px;
+      background: transparent;
       color: var(--muted);
-      margin-bottom: 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 12px;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      margin-top: 0.625rem;
+      transition: background 0.15s;
+      letter-spacing: 0.04em;
     }
 
-    .breakdown-row {
-      display: flex;
-      justify-content: space-between;
-      font-size: 13px;
-      padding: 8px 0;
-      border-bottom: 1px solid var(--border);
-      color: var(--mid);
-    }
+    .btn-back:hover { background: #f9f8f6; }
 
-    .breakdown-row:last-child { border-bottom: none; }
-    .breakdown-row strong { color: var(--charcoal); }
-
-    /* Lead form */
-    .lead-form-title {
-      font-size: 16px;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .lead-form-sub {
-      font-size: 13px;
-      color: var(--muted);
-      margin-bottom: 1.25rem;
-    }
-
-    .form-field {
-      margin-bottom: 1rem;
-    }
+    .form-field { margin-bottom: 0.875rem; }
 
     .form-field label {
       display: block;
-      font-size: 13px;
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
       color: var(--mid);
       margin-bottom: 5px;
-      font-weight: 500;
     }
 
     .form-field input,
@@ -348,30 +233,99 @@
       padding: 10px 12px;
       border: 1px solid var(--border);
       border-radius: 8px;
-      font-size: 14px;
-      font-family: inherit;
+      font-size: 13px;
+      font-family: 'Inter', sans-serif;
       color: var(--charcoal);
       outline: none;
+      background: #fff;
       transition: border-color 0.15s;
+      font-weight: 300;
     }
 
     .form-field input:focus,
-    .form-field textarea:focus {
-      border-color: var(--charcoal);
+    .form-field textarea:focus { border-color: var(--charcoal); }
+
+    .gate-intro { margin-bottom: 1.5rem; padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); text-align: center; }
+
+    .gate-intro-title {
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--charcoal);
+      margin-bottom: 5px;
+      letter-spacing: -0.01em;
     }
 
-    .form-field textarea { resize: vertical; }
+    .gate-intro-sub {
+      font-size: 12px;
+      font-weight: 300;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
-    /* Success */
-    .success-screen {
+    .quote-reveal {
+      border: 1px solid var(--charcoal);
+      border-radius: var(--radius);
+      padding: 1.5rem;
       text-align: center;
-      padding: 1rem 0;
+      margin-bottom: 1.5rem;
     }
+
+    .quote-reveal-label {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .quote-reveal-range {
+      font-size: 34px;
+      font-weight: 300;
+      color: var(--charcoal);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .quote-reveal-note { font-size: 11px; color: var(--muted); font-weight: 300; }
+
+    .breakdown-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .breakdown-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 12px;
+      padding: 7px 0;
+      border-bottom: 1px solid var(--border);
+      color: var(--mid);
+      font-weight: 300;
+    }
+
+    .breakdown-row:last-child { border-bottom: none; }
+    .breakdown-row strong { color: var(--charcoal); font-weight: 500; }
+
+    .disclaimer {
+      font-size: 10px;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 1rem;
+      line-height: 1.6;
+      font-weight: 300;
+    }
+
+    .success-screen { text-align: center; padding: 1rem 0; }
 
     .success-icon {
-      width: 56px;
-      height: 56px;
-      background: #edf7f1;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -380,33 +334,27 @@
     }
 
     .success-icon svg {
-      width: 28px;
-      height: 28px;
-      stroke: #2e7d52;
+      width: 22px;
+      height: 22px;
+      stroke: var(--charcoal);
       fill: none;
-      stroke-width: 2.5;
+      stroke-width: 1.5;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
     .success-title {
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 8px;
+      font-size: 18px;
+      font-weight: 400;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
     }
 
     .success-sub {
-      font-size: 14px;
+      font-size: 13px;
       color: var(--muted);
-      line-height: 1.6;
-    }
-
-    .disclaimer {
-      font-size: 11px;
-      color: var(--muted);
-      text-align: center;
-      margin-top: 1rem;
-      line-height: 1.5;
+      line-height: 1.7;
+      font-weight: 300;
     }
   </style>
 </head>
@@ -415,15 +363,14 @@
 <div class="brand-header">
   <div class="brand-name">Elegant Surfaces</div>
   <div class="page-title">Get an Instant Quote</div>
-  <div class="page-subtitle">Answer a few quick questions — takes under 2 minutes</div>
+  <div class="page-subtitle">Free tool — takes under 2 minutes</div>
 </div>
 
 <div class="card">
 
-  <!-- Progress -->
   <div class="progress-wrap">
     <div class="progress-label">
-      <span id="step-label">Step 1 of 6</span>
+      <span id="step-label">Step 1 of 7</span>
       <span id="step-pct">0%</span>
     </div>
     <div class="progress-bar">
@@ -431,52 +378,64 @@
     </div>
   </div>
 
-  <!-- Step 1: Project Type -->
+  <!-- Step 1: Lead capture gate -->
   <div class="step active" id="step-1">
+    <div class="gate-intro">
+      <div class="gate-intro-title">What would new countertops cost you?</div>
+      <div class="gate-intro-sub">Find out in under 2 minutes — free, no obligation.</div>
+
+    </div>
+    <form onsubmit="handleGate(event)">
+      <div class="form-field">
+        <label for="g-name">Your name</label>
+        <input type="text" id="g-name" placeholder="Sarah Johnson" required />
+      </div>
+      <div class="form-field">
+        <label for="g-email">Email address</label>
+        <input type="email" id="g-email" placeholder="sarah@email.com" required />
+      </div>
+      <div class="form-field">
+        <label for="g-phone">Phone number</label>
+        <input type="tel" id="g-phone" placeholder="651-555-0100" required />
+      </div>
+      <button type="submit" class="btn-next">Get My Free Quote</button>
+    </form>
+  </div>
+
+  <!-- Step 2: Project Type -->
+  <div class="step" id="step-2">
     <div class="step-question">What type of project is this?</div>
     <div class="step-hint">Select the area you're updating.</div>
     <div class="options-grid three">
-      <div class="option-card" onclick="select(this, 'project', 'Kitchen')">
-        <div class="option-title">Kitchen</div>
-      </div>
-      <div class="option-card" onclick="select(this, 'project', 'Bathroom')">
-        <div class="option-title">Bathroom</div>
-      </div>
-      <div class="option-card" onclick="select(this, 'project', 'Both')">
-        <div class="option-title">Both</div>
-      </div>
+      <div class="option-card" onclick="select(this,'project','Kitchen')"><div class="option-title">Kitchen</div></div>
+      <div class="option-card" onclick="select(this,'project','Bathroom')"><div class="option-title">Bathroom</div></div>
+      <div class="option-card" onclick="select(this,'project','Other');showOther()"><div class="option-title">Other</div></div>
     </div>
-    <button class="btn-next" id="next-1" onclick="goTo(2)" disabled>Continue</button>
-  </div>
-
-  <!-- Step 2: Material -->
-  <div class="step" id="step-2">
-    <div class="step-question">Which material are you interested in?</div>
-    <div class="step-hint">Not sure? We'll help you decide during your consultation.</div>
-    <div class="options-grid">
-      <div class="option-card" onclick="select(this, 'material', 'Quartz')">
-        <div class="option-title">Quartz</div>
-        <div class="option-sub">Low maintenance</div>
-      </div>
-      <div class="option-card" onclick="select(this, 'material', 'Granite')">
-        <div class="option-title">Granite</div>
-        <div class="option-sub">Natural stone</div>
-      </div>
-      <div class="option-card" onclick="select(this, 'material', 'Marble')">
-        <div class="option-title">Marble</div>
-        <div class="option-sub">Timeless luxury</div>
-      </div>
-      <div class="option-card" onclick="select(this, 'material', 'Quartzite')">
-        <div class="option-title">Quartzite</div>
-        <div class="option-sub">Premium natural</div>
+    <div id="other-field" style="display:none; margin-bottom:1.25rem;">
+      <div class="form-field">
+        <label for="other-specify">Please specify</label>
+        <input type="text" id="other-specify" placeholder="e.g. Laundry room, bar, office..." oninput="answers.projectOther = this.value" />
       </div>
     </div>
     <button class="btn-next" id="next-2" onclick="goTo(3)" disabled>Continue</button>
-    <button class="btn-back" onclick="goTo(1)">Back</button>
   </div>
 
-  <!-- Step 3: Square footage -->
+  <!-- Step 3: Material -->
   <div class="step" id="step-3">
+    <div class="step-question">Which material interests you?</div>
+    <div class="step-hint">Not sure? We'll help you decide during your consultation.</div>
+    <div class="options-grid">
+      <div class="option-card" onclick="select(this,'material','Quartz')"><div class="option-title">Quartz</div><div class="option-sub">Low maintenance</div></div>
+      <div class="option-card" onclick="select(this,'material','Granite')"><div class="option-title">Granite</div><div class="option-sub">Natural stone</div></div>
+      <div class="option-card" onclick="select(this,'material','Marble')"><div class="option-title">Marble</div><div class="option-sub">Timeless luxury</div></div>
+      <div class="option-card" onclick="select(this,'material','Quartzite')"><div class="option-title">Quartzite</div><div class="option-sub">Premium natural</div></div>
+    </div>
+    <button class="btn-next" id="next-3" onclick="goTo(4)" disabled>Continue</button>
+    <button class="btn-back" onclick="goTo(2)">Back</button>
+  </div>
+
+  <!-- Step 4: Square footage -->
+  <div class="step" id="step-4">
     <div class="step-question">Approximate square footage?</div>
     <div class="step-hint">Measure length × width of your countertop area. Average kitchen is 40–60 sq ft.</div>
     <div class="slider-wrap">
@@ -484,124 +443,66 @@
       <input type="range" id="sqft-slider" min="10" max="150" value="40" oninput="updateSqft(this.value)" />
       <div class="slider-labels"><span>10 sq ft</span><span>150 sq ft</span></div>
     </div>
-    <div class="estimate-preview visible" id="estimate-preview">
-      <div class="estimate-label">Estimated range</div>
-      <div class="estimate-range" id="estimate-preview-value">—</div>
-    </div>
-    <button class="btn-next" onclick="goTo(4)">Continue</button>
-    <button class="btn-back" onclick="goTo(2)">Back</button>
-  </div>
-
-  <!-- Step 4: Edge profile -->
-  <div class="step" id="step-4">
-    <div class="step-question">What edge profile do you prefer?</div>
-    <div class="step-hint">The edge is the visible side of your countertop.</div>
-    <div class="options-grid one">
-      <div class="option-card" onclick="select(this, 'edge', 'Standard')">
-        <div class="option-title">Standard (Eased)</div>
-        <div class="option-sub">Clean, straight edge — most popular</div>
-      </div>
-      <div class="option-card" onclick="select(this, 'edge', 'Beveled')">
-        <div class="option-title">Beveled</div>
-        <div class="option-sub">Angled detail — adds character</div>
-      </div>
-      <div class="option-card" onclick="select(this, 'edge', 'Mitered')">
-        <div class="option-title">Mitered</div>
-        <div class="option-sub">Thick, dramatic edge — ultra premium</div>
-      </div>
-    </div>
-    <button class="btn-next" id="next-4" onclick="goTo(5)" disabled>Continue</button>
+    <button class="btn-next" onclick="goTo(5)">Continue</button>
     <button class="btn-back" onclick="goTo(3)">Back</button>
   </div>
 
-  <!-- Step 5: Sink cutout -->
+  <!-- Step 5: Edge profile -->
   <div class="step" id="step-5">
-    <div class="step-question">Do you need a sink cutout?</div>
-    <div class="step-hint">We cut and finish the opening for your sink during fabrication.</div>
-    <div class="options-grid">
-      <div class="option-card" onclick="select(this, 'sink', 'Yes')">
-        <div class="option-title">Yes</div>
-      </div>
-      <div class="option-card" onclick="select(this, 'sink', 'No')">
-        <div class="option-title">No</div>
-      </div>
+    <div class="step-question">Preferred edge profile?</div>
+    <div class="step-hint">The edge is the visible side of your countertop.</div>
+    <div class="options-grid one">
+      <div class="option-card" onclick="select(this,'edge','Standard')"><div class="option-title">Standard (Eased)</div><div class="option-sub">Clean straight edge — most popular</div></div>
+      <div class="option-card" onclick="select(this,'edge','Beveled')"><div class="option-title">Beveled</div><div class="option-sub">Angled detail — adds character</div></div>
+      <div class="option-card" onclick="select(this,'edge','Mitered')"><div class="option-title">Mitered</div><div class="option-sub">Thick dramatic edge — ultra premium</div></div>
     </div>
     <button class="btn-next" id="next-5" onclick="goTo(6)" disabled>Continue</button>
     <button class="btn-back" onclick="goTo(4)">Back</button>
   </div>
 
-  <!-- Step 6: Quote + Lead Capture -->
+  <!-- Step 6: Sink cutout -->
   <div class="step" id="step-6">
-    <div class="quote-result">
-      <div class="quote-result-label">Your Estimated Investment</div>
-      <div class="quote-result-range" id="final-range">—</div>
-      <div class="quote-result-note">Installed — fabrication & labor included</div>
+    <div class="step-question">Do you need a sink cutout?</div>
+    <div class="step-hint">We cut and finish the opening for your sink during fabrication.</div>
+    <div class="options-grid">
+      <div class="option-card" onclick="select(this,'sink','Yes')"><div class="option-title">Yes</div></div>
+      <div class="option-card" onclick="select(this,'sink','No')"><div class="option-title">No</div></div>
     </div>
-
-    <div class="quote-breakdown" id="breakdown"></div>
-
-    <div class="lead-form-title">Send me this quote</div>
-    <div class="lead-form-sub">Enter your info and we'll follow up within 1 business day to confirm your quote and answer any questions.</div>
-
-    <form id="lead-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" onsubmit="handleSubmit(event)">
-      <input type="hidden" name="Project Type" id="f-project" />
-      <input type="hidden" name="Material" id="f-material" />
-      <input type="hidden" name="Square Footage" id="f-sqft" />
-      <input type="hidden" name="Edge Profile" id="f-edge" />
-      <input type="hidden" name="Sink Cutout" id="f-sink" />
-      <input type="hidden" name="Estimated Range" id="f-range" />
-
-      <div class="form-field">
-        <label for="f-name">Your name</label>
-        <input type="text" id="f-name" name="Name" placeholder="Sarah Johnson" required />
-      </div>
-      <div class="form-field">
-        <label for="f-email">Email address</label>
-        <input type="email" id="f-email" name="Email" placeholder="sarah@email.com" required />
-      </div>
-      <div class="form-field">
-        <label for="f-phone">Phone number</label>
-        <input type="tel" id="f-phone" name="Phone" placeholder="651-555-0100" required />
-      </div>
-      <div class="form-field">
-        <label for="f-notes">Anything else we should know? <span style="color:var(--muted);font-weight:400;">(optional)</span></label>
-        <textarea id="f-notes" name="Notes" rows="3" placeholder="Timeline, current countertop material, specific stone you have in mind..."></textarea>
-      </div>
-
-      <button type="submit" class="btn-next">Send My Quote</button>
-    </form>
-
-    <div class="disclaimer">
-      Estimates are based on standard installation in the Twin Cities metro area. Final pricing confirmed after an in-home measurement. No obligation.
-    </div>
-
+    <button class="btn-next" id="next-6" onclick="submitAndReveal()" disabled>See My Quote</button>
     <button class="btn-back" onclick="goTo(5)">Back</button>
   </div>
 
-  <!-- Success -->
+  <!-- Step 7: Quote reveal -->
+  <div class="step" id="step-7">
+    <div class="quote-reveal">
+      <div class="quote-reveal-label">Your Estimated Investment</div>
+      <div class="quote-reveal-range" id="final-range">—</div>
+      <div class="quote-reveal-note">Installed — fabrication & labor included</div>
+    </div>
+    <div style="margin-bottom:1.5rem;" id="breakdown"></div>
+    <div class="disclaimer">
+      Estimates are based on standard Twin Cities metro installation. Final pricing confirmed after in-home measurement. No obligation.
+    </div>
+  </div>
+
+  <!-- Success overlay after submission -->
   <div class="step" id="step-success">
     <div class="success-screen">
       <div class="success-icon">
         <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
       </div>
-      <div class="success-title">You're all set, <span id="success-name"></span>!</div>
-      <div class="success-sub">We'll reach out within 1 business day to confirm your quote and answer any questions.<br><br>In the meantime, feel free to browse our stone selection at <strong>elegantsurfacesmn.com</strong></div>
+      <div class="success-title">We'll be in touch, <span id="success-name"></span>.</div>
+      <div class="success-sub">Your quote has been sent to our team. Expect a follow up within 1 business day.<br><br>In the meantime, browse our stone selection at <strong>elegantsurfacesmn.com</strong></div>
     </div>
   </div>
 
 </div>
 
 <script>
-  const TOTAL_STEPS = 6;
+  const TOTAL_STEPS = 7;
   let currentStep = 1;
-
-  const answers = {
-    project: null,
-    material: null,
-    sqft: 40,
-    edge: null,
-    sink: null
-  };
+  const lead = { name: '', email: '', phone: '' };
+  const answers = { project: null, projectOther: '', material: null, sqft: 40, edge: null, sink: null };
 
   const materialRates = {
     Quartz:    { low: 65, high: 85 },
@@ -610,68 +511,103 @@
     Quartzite: { low: 80, high: 100 }
   };
 
+  async function handleGate(e) {
+    e.preventDefault();
+    lead.name = document.getElementById('g-name').value;
+    lead.email = document.getElementById('g-email').value;
+    lead.phone = document.getElementById('g-phone').value;
+
+    // Submit lead immediately so we capture it even if they abandon
+    const formData = new FormData();
+    formData.append('Name', lead.name);
+    formData.append('Email', lead.email);
+    formData.append('Phone', lead.phone);
+    formData.append('Status', 'Lead captured — quote not yet completed');
+
+    try {
+      await fetch('https://formspree.io/f/xkolbdqq', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+    } catch(e) { console.log('Gate submission error', e); }
+
+    goTo(2);
+  }
+
+  function showOther() {
+    const field = document.getElementById('other-field');
+    if (field) field.style.display = answers.project === 'Other' ? 'block' : 'none';
+  }
+
   function select(el, key, value) {
-    const parent = el.parentElement;
-    parent.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
+    el.parentElement.querySelectorAll('.option-card').forEach(c => c.classList.remove('selected'));
     el.classList.add('selected');
     answers[key] = value;
+    if (key === 'project' && value !== 'Other') {
+      const field = document.getElementById('other-field');
+      if (field) field.style.display = 'none';
+    }
     const nextBtn = document.getElementById('next-' + currentStep);
     if (nextBtn) nextBtn.disabled = false;
-    updateEstimate();
   }
 
   function updateSqft(val) {
     answers.sqft = parseInt(val);
     document.getElementById('sqft-display').textContent = val;
-    updateEstimate();
   }
 
-  function updateEstimate() {
-    if (!answers.material || !answers.sqft) return;
-    const rates = materialRates[answers.material];
-    if (!rates) return;
-    let lowTotal = rates.low * answers.sqft;
-    let highTotal = rates.high * answers.sqft;
-    if (answers.edge === 'Beveled') { lowTotal *= 1.05; highTotal *= 1.05; }
-    if (answers.edge === 'Mitered') { lowTotal *= 1.10; highTotal *= 1.10; }
-    if (answers.sink === 'Yes') { lowTotal += 150; highTotal += 150; }
-    const fmt = (n) => '$' + Math.round(n).toLocaleString();
-    const range = fmt(lowTotal) + ' – ' + fmt(highTotal);
-    const preview = document.getElementById('estimate-preview-value');
-    if (preview) preview.textContent = range;
-    return range;
+  function calcRange() {
+    if (!answers.material) return null;
+    const r = materialRates[answers.material];
+    let low = r.low * answers.sqft;
+    let high = r.high * answers.sqft;
+    if (answers.edge === 'Beveled') { low *= 1.05; high *= 1.05; }
+    if (answers.edge === 'Mitered') { low *= 1.10; high *= 1.10; }
+    if (answers.sink === 'Yes') { low += 150; high += 150; }
+    const fmt = n => '$' + Math.round(n).toLocaleString();
+    return { low, high, str: fmt(low) + ' – ' + fmt(high) };
   }
 
   function buildBreakdown() {
-    const rates = materialRates[answers.material];
-    let lowTotal = rates.low * answers.sqft;
-    let highTotal = rates.high * answers.sqft;
-    const fmt = (n) => '$' + Math.round(n).toLocaleString();
-    let rows = [];
-    rows.push({ label: answers.material + ' (' + answers.sqft + ' sq ft)', value: fmt(rates.low * answers.sqft) + ' – ' + fmt(rates.high * answers.sqft) });
-    if (answers.edge === 'Beveled') {
-      rows.push({ label: 'Beveled edge (+5%)', value: fmt(rates.low * answers.sqft * 0.05) + ' – ' + fmt(rates.high * answers.sqft * 0.05) });
-      lowTotal *= 1.05; highTotal *= 1.05;
-    }
-    if (answers.edge === 'Mitered') {
-      rows.push({ label: 'Mitered edge (+10%)', value: fmt(rates.low * answers.sqft * 0.10) + ' – ' + fmt(rates.high * answers.sqft * 0.10) });
-      lowTotal *= 1.10; highTotal *= 1.10;
-    }
-    if (answers.sink === 'Yes') {
-      rows.push({ label: 'Sink cutout', value: '$150' });
-      lowTotal += 150; highTotal += 150;
-    }
-    const range = fmt(lowTotal) + ' – ' + fmt(highTotal);
-    document.getElementById('final-range').textContent = range;
-    const bd = document.getElementById('breakdown');
-    bd.innerHTML = '<div class="breakdown-title">Estimate breakdown</div>' +
-      rows.map(r => '<div class="breakdown-row"><span>' + r.label + '</span><strong>' + r.value + '</strong></div>').join('');
-    document.getElementById('f-project').value = answers.project;
-    document.getElementById('f-material').value = answers.material;
-    document.getElementById('f-sqft').value = answers.sqft + ' sq ft';
-    document.getElementById('f-edge').value = answers.edge;
-    document.getElementById('f-sink').value = answers.sink;
-    document.getElementById('f-range').value = range;
+    const r = materialRates[answers.material];
+    const fmt = n => '$' + Math.round(n).toLocaleString();
+    let rows = [{ label: answers.material + ' (' + answers.sqft + ' sq ft)', value: fmt(r.low * answers.sqft) + ' – ' + fmt(r.high * answers.sqft) }];
+    if (answers.edge === 'Beveled') rows.push({ label: 'Beveled edge (+5%)', value: fmt(r.low * answers.sqft * 0.05) + ' – ' + fmt(r.high * answers.sqft * 0.05) });
+    if (answers.edge === 'Mitered') rows.push({ label: 'Mitered edge (+10%)', value: fmt(r.low * answers.sqft * 0.10) + ' – ' + fmt(r.high * answers.sqft * 0.10) });
+    if (answers.sink === 'Yes') rows.push({ label: 'Sink cutout', value: '$150' });
+    const range = calcRange();
+    document.getElementById('final-range').textContent = range.str;
+    document.getElementById('breakdown').innerHTML =
+      '<div class="breakdown-title">Estimate breakdown</div>' +
+      rows.map(row => '<div class="breakdown-row"><span>' + row.label + '</span><strong>' + row.value + '</strong></div>').join('');
+    return range.str;
+  }
+
+  async function submitAndReveal() {
+    const rangeStr = buildBreakdown();
+    const projectVal = answers.project === 'Other' && answers.projectOther ? 'Other: ' + answers.projectOther : answers.project;
+
+    const formData = new FormData();
+    formData.append('Name', lead.name);
+    formData.append('Email', lead.email);
+    formData.append('Phone', lead.phone);
+    formData.append('Project Type', projectVal);
+    formData.append('Material', answers.material);
+    formData.append('Square Footage', answers.sqft + ' sq ft');
+    formData.append('Edge Profile', answers.edge);
+    formData.append('Sink Cutout', answers.sink);
+    formData.append('Estimated Range', rangeStr);
+
+    goTo(7);
+
+    try {
+      await fetch('https://formspree.io/f/xkolbdqq', {
+        method: 'POST',
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      });
+    } catch(e) { console.log('Form submission error', e); }
   }
 
   function goTo(step) {
@@ -680,45 +616,10 @@
     document.getElementById('step-' + currentStep).classList.add('active');
     const pct = Math.round(((step - 1) / TOTAL_STEPS) * 100);
     document.getElementById('progress-fill').style.width = pct + '%';
-    document.getElementById('step-label').textContent = 'Step ' + step + ' of ' + TOTAL_STEPS;
+    document.getElementById('step-label').textContent = 'Step ' + Math.min(step, TOTAL_STEPS) + ' of ' + TOTAL_STEPS;
     document.getElementById('step-pct').textContent = pct + '%';
-    if (step === 6) buildBreakdown();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  async function handleSubmit(e) {
-    e.preventDefault();
-    const btn = e.target.querySelector('button[type="submit"]');
-    btn.disabled = true;
-    btn.textContent = 'Sending...';
-    const name = document.getElementById('f-name').value;
-    try {
-      const res = await fetch(e.target.action, {
-        method: 'POST',
-        body: new FormData(e.target),
-        headers: { 'Accept': 'application/json' }
-      });
-      if (res.ok) {
-        document.getElementById('step-6').classList.remove('active');
-        document.getElementById('step-success').classList.add('active');
-        document.getElementById('success-name').textContent = name.split(' ')[0];
-        document.getElementById('progress-fill').style.width = '100%';
-        document.getElementById('step-label').textContent = 'Complete';
-        document.getElementById('step-pct').textContent = '100%';
-      } else {
-        btn.disabled = false;
-        btn.textContent = 'Send My Quote';
-        alert('Something went wrong. Please try again or call us directly.');
-      }
-    } catch {
-      btn.disabled = false;
-      btn.textContent = 'Send My Quote';
-      alert('Something went wrong. Please try again or call us directly.');
-    }
-  }
-
-  // Init sqft
-  updateEstimate();
 </script>
 </body>
 </html>
