@@ -614,7 +614,7 @@
     document.getElementById('step-' + currentStep).classList.remove('active');
     currentStep = step;
     document.getElementById('step-' + currentStep).classList.add('active');
-    const pct = Math.round(((step - 1) / TOTAL_STEPS) * 100);
+    const pct = step >= TOTAL_STEPS ? 100 : Math.round(((step - 1) / TOTAL_STEPS) * 100);
     document.getElementById('progress-fill').style.width = pct + '%';
     document.getElementById('step-label').textContent = 'Step ' + Math.min(step, TOTAL_STEPS) + ' of ' + TOTAL_STEPS;
     document.getElementById('step-pct').textContent = pct + '%';
